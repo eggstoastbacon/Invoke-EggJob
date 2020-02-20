@@ -246,9 +246,3 @@ Function Invoke-EggJob {
     Write-Host ("All jobs are done. Time elapsed: " + $jobTimer.elapsed) -ForegroundColor Cyan
   }
 }
-    
-$items = (1..2500)
-
-$myScriptBlock = { $math = $myjobvar + 6 | export-csv c:\temp\mydata_$x.csv -append }
-  
-Invoke-EggJob -jobs 8 -int_records $items -scriptBlock $myscriptblock -errorLog C:\temp -CombinePath c:\temp -combineSrcName "mydata" -combineDestName "combo"
