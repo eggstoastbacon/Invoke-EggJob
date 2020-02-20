@@ -220,19 +220,35 @@ Function Invoke-EggJob {
       $combineFileType = $renameFile.Name.split(".")[1]
       Rename-Item -Force ("$combinePath\" + $renameFile.Name) ("$combinePath\" + $aRandom + $renameFile.Name) 
     }
-  
-    $bRandom = get-random
-    $procFiles = Get-ChildItem $combinePath | where-object { $_.name -like "*$aRandom*" } | Select-Object Name
-    ForEach ($procFile in $procFiles) {
-      Get-Content -path ("$combinePath\" + $procfile.Name) | 
-      Out-File ($combinePath + "\" + $bRandom + "-" + $combineDestName + "." + $combineFileType) -append
+    if ($combineFileType -notlike "*csv*") {
+      $bRandom = get-random
+      $procFiles = Get-ChildItem $combinePath | where-object { $_.name -like "*$aRandom*" } | Select-Object Name
+      ForEach ($procFile in $procFiles) {
+        Get-Content -path ("$combinePath\" + $procfile.Name) | 
+        Out-File ($combinePath + "\" + $bRandom + "-" + $combineDestName + "." + $combineFileType) -append
+      } 
+    
+      if ($combineFileType -like "*csv*") {
+        $bRandom = get-random
+        $procFiles = Get-ChildItem $combinePath | where-object { $_.name -like "*$aRandom*" } | Select-Object FullName
+        ForEach ($procFile in $procFiles) {
+          Get-Content -path ($procfile.FullName) | 
+          Add-Content ($combinePath + "\" + $bRandom + "-" + $combineDestName + "." + $combineFileType)
+        }
+      }
+      
+      Get-ChildItem $combinePath | where-object { $_.name -like "*$aRandom*" } | remove-item
+    
     }
-    
-    Get-ChildItem $combinePath | where-object { $_.name -like "*$aRandom*" } | remove-item
-    
-  }
-  $jobTimer.Stop()
+    $jobTimer.Stop()
   
-  #Inform the user that the job is done and display elapsed time.  
-  Write-Host ("All jobs are done. Time elapsed: " + $jobTimer.elapsed) -ForegroundColor Cyan
+    #Inform the user that the job is done and display elapsed time.  
+    Write-Host ("All jobs are done. Time elapsed: " + $jobTimer.elapsed) -ForegroundColor Cyan
+  }
 }
+    
+$items = (1..2500)
+
+$myScriptBlock = { $math = $myjobvar + 6 | export-csv c:\temp\mydata_$x.csv -append }
+  
+Invoke-EggJob -jobs 8 -int_records $items -scriptBlock $myscriptblock -errorLog C:\temp -CombinePath c:\temp -combineSrcName "mydata" -combineDestName "combo"
