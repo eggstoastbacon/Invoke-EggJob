@@ -97,7 +97,7 @@ Function Invoke-EggJob {
     Records or items processed in parallel with a scriptblock you provide.
 
   .NOTES
-    Version: 1.0.0
+    Version: 1.1.7
     Author: Eggs Toast Bacon
     Creation Date: 02/19/2020
     Purpose/Change: Initial function development.
