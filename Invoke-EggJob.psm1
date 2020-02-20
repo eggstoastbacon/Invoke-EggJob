@@ -142,8 +142,7 @@ Function Invoke-EggJob {
         [Parameter(Mandatory = $false, Position = 5)]$errorLog,
         [Parameter(Mandatory = $false, Position = 6)]$combinePath,
         [Parameter(Mandatory = $false, Position = 7)]$combineSrcName,
-        [Parameter(Mandatory = $false, Position = 8)]$combineDestName = "combined"
-      
+        [Parameter(Mandatory = $false, Position = 8)]$combineDestName = "combined"    
     )
       
     #Starts the timer of this function.
