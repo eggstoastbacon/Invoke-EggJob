@@ -469,7 +469,6 @@ Function Invoke-EggJob {
         } 
     }
 
-
     if ($combinePath -and $CombineSrcName) { 
         if ($combineFileType -notlike "*csv*") {
             $bRandom = get-random
