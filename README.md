@@ -65,5 +65,4 @@ Install-Module -Name Invoke-EggJob
     Result is the number of items is divided by the number of jobs specified and each job is assigned an even workload.
     8 jobs run concurrently in parallel until their assigned workload is complete.
     Each $item in $items is added by 6 and the result output is appended to c:\temp\math_[job#].txt
-    
-  #>
+   
