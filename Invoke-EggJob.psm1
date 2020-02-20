@@ -1,7 +1,7 @@
 Function Invoke-EggJob {
   <#
   .SYNOPSIS
-    Launches the spcified amounts of jobs, divides tasks evenly between them and runs them concurrently.
+    Launches the specified amounts of jobs, divides tasks evenly between them and runs them concurrently.
 
   .DESCRIPTION
     Specify the amount of jobs, a variable or command to gather records and a scriptblock to run. 
