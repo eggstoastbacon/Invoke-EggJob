@@ -1,6 +1,6 @@
-https://www.powershellgallery.com/packages/Invoke-EggJob/1.0.5
+https://www.powershellgallery.com/packages/Invoke-EggJob/
 
-  <#
+  
   .SYNOPSIS
     Launches the spcified amounts of jobs, divides tasks evenly between them and runs them concurrently.
 
