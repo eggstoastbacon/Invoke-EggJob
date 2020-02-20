@@ -2,10 +2,10 @@ https://www.powershellgallery.com/packages/Invoke-EggJob/1.0.5
 
   <#
   .SYNOPSIS
-    Launches the spcified amounts of jobs, divides tasks evenly bewteen them and runs them concurrently.
+    Launches the spcified amounts of jobs, divides tasks evenly between them and runs them concurrently.
 
   .DESCRIPTION
-    Specify the amount of jobs, a variable or command to gather records and a scriptblock to run. Additional features include error log path, and reordering of records.
+    Specify the amount of jobs, a variable or command to gather records and a scriptblock to run. Additional features include error log     path, and reordering of records.
 
   .PARAMETER jobs
     Mandatory. Specify the amount of jobs that will be started. The $x variable refers to the job number while running.
