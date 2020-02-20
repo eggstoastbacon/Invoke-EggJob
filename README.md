@@ -1,5 +1,7 @@
 https://www.powershellgallery.com/packages/Invoke-EggJob/
 
+Install-Module -Name Invoke-EggJob
+
   
   .SYNOPSIS
     Launches the spcified amounts of jobs, divides tasks evenly between them and runs them concurrently.
