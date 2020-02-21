@@ -1,8 +1,9 @@
+BENCHMARK: https://github.com/eggstoastbacon/Invoke-EggThread/wiki/Benchmark:-EggThread-vs.-EggJob-vs.-Parallel
+
 https://www.powershellgallery.com/packages/Invoke-EggJob/
 
 Install-Module -Name Invoke-EggJob
-
-  
+ 
   .SYNOPSIS
     Launches the specified amounts of jobs, divides tasks evenly between them and runs them concurrently.
  
