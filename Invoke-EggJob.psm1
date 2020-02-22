@@ -7,6 +7,8 @@ Function Invoke-EggJob {
     Specify the amount of jobs, a variable or command to gather records and a scriptblock to run. 
     Additional features include error log path, and reordering of records.
     If your scriptblock will output a file append $x to the file name.
+    Output is stored in the variable $global:myJobData
+    Example: $global:myJobData | export-csv c:\temp\myData.csv, or $global:myJobData | outfile-csv c:\temp\myData.txt
 
   .PARAMETER jobs
     Mandatory. Specify the amount of jobs that will be started. The $x variable refers to the job number while running.
