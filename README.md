@@ -96,11 +96,15 @@ Install-Module -Name Invoke-EggJob
   job3 assigned records 2,5,9,13,17
  
   job4 assigned records 3,6,10,14,18
-    .PARAMETER importFunctions
+  
+  .PARAMETER importFunctions
   Parameter code by: u/PowerShellMichael
+  
   Import one or more declared functions into your scriptblock, will be added to your scriptblock just before the job runs.
   Example:
+  
   Times two every item.
+  
     function timesTwo {
     param([int]$value)
     [int]$value * 2
